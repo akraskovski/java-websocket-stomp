@@ -1,0 +1,30 @@
+group 'by.kraskovski'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        maven { url "http://repo.spring.io/libs-release" }
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.spring.io/libs-release" }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-websocket")
+    compile("org.springframework:spring-messaging")
+    testCompile("junit:junit")
+}
