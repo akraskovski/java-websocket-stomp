@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class GreetingController {
 
-    @MessageMapping("/websocket-example")
-    @SendTo("topic/greetings")
+    @MessageMapping("/websocket-example") //end-point mapping listener
+    @SendTo("topic/greetings") //sending response from this url
     public Greeting greeting(HelloMessage message) throws InterruptedException {
         Thread.sleep(1000);
         return new Greeting("Hello, " + message.getName());
